@@ -20,10 +20,10 @@ const Login = () => {
     setTimeout(() => {
       if (password === DEFAULT_PASSWORD) {
         localStorage.setItem("isAuthenticated", "true");
-        toast.success("Login successful!");
+        toast.success("Connexion réussie !");
         navigate("/dashboard");
       } else {
-        toast.error("Invalid password");
+        toast.error("Mot de passe invalide");
       }
       setIsLoading(false);
     }, 500);
@@ -38,7 +38,7 @@ const Login = () => {
           className="mb-4 gap-2"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back
+          Retour
         </Button>
         <div className="text-center mb-8 space-y-3">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-glow shadow-elevated mb-4">
@@ -47,14 +47,14 @@ const Login = () => {
           <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
             FileDrive
           </h1>
-          <p className="text-muted-foreground">Secure file storage and sharing</p>
+          <p className="text-muted-foreground">Stockage et partage sécurisé de fichiers</p>
         </div>
 
         <Card className="shadow-elevated border-border/50 backdrop-blur">
           <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl">Welcome back</CardTitle>
+            <CardTitle className="text-2xl">Bon retour</CardTitle>
             <CardDescription>
-              Enter your password to access your files
+              Entrez votre mot de passe pour accéder à vos fichiers
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -64,7 +64,7 @@ const Login = () => {
                   <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input
                     type="password"
-                    placeholder="Enter password"
+                    placeholder="Entrez le mot de passe"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="pl-9"
@@ -72,7 +72,7 @@ const Login = () => {
                   />
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  Default password: <span className="font-mono">admin123</span>
+                  Mot de passe par défaut : <span className="font-mono">admin123</span>
                 </p>
               </div>
 
@@ -81,7 +81,7 @@ const Login = () => {
                 className="w-full bg-gradient-to-r from-primary to-primary-glow hover:opacity-90 transition-opacity"
                 disabled={isLoading}
               >
-                {isLoading ? "Logging in..." : "Login"}
+                {isLoading ? "Connexion..." : "Se connecter"}
               </Button>
             </form>
           </CardContent>

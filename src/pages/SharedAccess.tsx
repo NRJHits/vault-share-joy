@@ -30,13 +30,13 @@ const SharedAccess = () => {
         const expirationDate = new Date(file.expiresAt);
         if (expirationDate > new Date()) {
           setFoundFile(file);
-          toast.success("File found!");
+          toast.success("Fichier trouvé !");
         } else {
-          toast.error("This share link has expired");
+          toast.error("Ce lien de partage a expiré");
           setFoundFile(null);
         }
       } else {
-        toast.error("Invalid share code");
+        toast.error("Code de partage invalide");
         setFoundFile(null);
       }
       setIsSearching(false);
@@ -45,7 +45,7 @@ const SharedAccess = () => {
 
   const handleDownload = () => {
     if (foundFile) {
-      toast.success(`Downloading ${foundFile.fileName}...`);
+      toast.success(`Téléchargement de ${foundFile.fileName}...`);
     }
   };
 
@@ -57,16 +57,16 @@ const SharedAccess = () => {
             <HardDrive className="w-8 h-8 text-primary-foreground" />
           </Link>
           <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-            Access Shared File
+            Accéder à un fichier partagé
           </h1>
-          <p className="text-muted-foreground">Enter your share code to retrieve the file</p>
+          <p className="text-muted-foreground">Entrez votre code de partage pour récupérer le fichier</p>
         </div>
 
         <Card className="shadow-elevated border-border/50 backdrop-blur">
           <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl">Retrieve File</CardTitle>
+            <CardTitle className="text-2xl">Récupérer un fichier</CardTitle>
             <CardDescription>
-              Enter the 6-character code you received
+              Entrez le code à 6 caractères que vous avez reçu
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -76,7 +76,7 @@ const SharedAccess = () => {
                   <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input
                     type="text"
-                    placeholder="Enter share code (e.g., ABC123)"
+                    placeholder="Entrez le code de partage (ex: ABC123)"
                     value={shareCode}
                     onChange={(e) => setShareCode(e.target.value.toUpperCase())}
                     className="pl-9 font-mono text-center text-lg tracking-wider uppercase"
@@ -91,17 +91,17 @@ const SharedAccess = () => {
                 className="w-full bg-gradient-to-r from-primary to-primary-glow hover:opacity-90 transition-opacity"
                 disabled={isSearching}
               >
-                {isSearching ? "Searching..." : "Find File"}
+                {isSearching ? "Recherche..." : "Trouver le fichier"}
               </Button>
             </form>
 
             {foundFile && (
               <div className="mt-6 p-4 rounded-lg bg-muted/50 border border-border space-y-3">
                 <div className="space-y-1">
-                  <p className="text-sm text-muted-foreground">File found:</p>
+                  <p className="text-sm text-muted-foreground">Fichier trouvé :</p>
                   <p className="font-semibold text-lg">{foundFile.fileName}</p>
                   <p className="text-xs text-muted-foreground">
-                    Expires: {new Date(foundFile.expiresAt).toLocaleDateString()} at {new Date(foundFile.expiresAt).toLocaleTimeString()}
+                    Expire le : {new Date(foundFile.expiresAt).toLocaleDateString("fr-FR")} à {new Date(foundFile.expiresAt).toLocaleTimeString("fr-FR")}
                   </p>
                 </div>
 
@@ -110,7 +110,7 @@ const SharedAccess = () => {
                   className="w-full gap-2 bg-gradient-to-r from-primary to-primary-glow hover:opacity-90 transition-opacity"
                 >
                   <Download className="w-4 h-4" />
-                  Download File
+                  Télécharger le fichier
                 </Button>
               </div>
             )}
@@ -119,7 +119,7 @@ const SharedAccess = () => {
 
         <div className="mt-4 text-center">
           <Link to="/login" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-            Go to Login
+            Aller à la connexion
           </Link>
         </div>
       </div>

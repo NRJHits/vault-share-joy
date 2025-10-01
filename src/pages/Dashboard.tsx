@@ -35,7 +35,7 @@ const Dashboard = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("isAuthenticated");
-    toast.success("Logged out successfully");
+    toast.success("Déconnexion réussie");
     navigate("/login");
   };
 
@@ -54,14 +54,14 @@ const Dashboard = () => {
     const updatedFiles = [...files, ...newFiles];
     setFiles(updatedFiles);
     localStorage.setItem("files", JSON.stringify(updatedFiles));
-    toast.success(`${newFiles.length} file(s) uploaded successfully`);
+    toast.success(`${newFiles.length} fichier(s) téléversé(s) avec succès`);
   };
 
   const handleDeleteFile = (id: string) => {
     const updatedFiles = files.filter((file) => file.id !== id);
     setFiles(updatedFiles);
     localStorage.setItem("files", JSON.stringify(updatedFiles));
-    toast.success("File deleted");
+    toast.success("Fichier supprimé");
   };
 
   const handleShareFile = (id: string) => {
@@ -81,7 +81,7 @@ const Dashboard = () => {
               <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
                 FileDrive
               </h1>
-              <p className="text-xs text-muted-foreground">Your personal cloud storage</p>
+              <p className="text-xs text-muted-foreground">Votre stockage cloud personnel</p>
             </div>
           </div>
 
@@ -91,7 +91,7 @@ const Dashboard = () => {
             className="gap-2"
           >
             <LogOut className="w-4 h-4" />
-            Logout
+            Déconnexion
           </Button>
         </div>
       </header>
@@ -100,9 +100,9 @@ const Dashboard = () => {
         <div className="max-w-5xl mx-auto space-y-6">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-3xl font-bold">My Files</h2>
+              <h2 className="text-3xl font-bold">Mes fichiers</h2>
               <p className="text-muted-foreground mt-1">
-                {files.length} {files.length === 1 ? "file" : "files"} stored
+                {files.length} {files.length === 1 ? "fichier stocké" : "fichiers stockés"}
               </p>
             </div>
 
@@ -116,7 +116,7 @@ const Dashboard = () => {
               />
               <Button className="gap-2 bg-gradient-to-r from-primary to-primary-glow hover:opacity-90 transition-opacity cursor-pointer">
                 <Upload className="w-4 h-4" />
-                Upload Files
+                Téléverser des fichiers
               </Button>
             </label>
           </div>

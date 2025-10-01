@@ -18,11 +18,11 @@ const Index = () => {
 
           <div className="flex items-center gap-3">
             <Link to="/shared">
-              <Button variant="outline">Access Shared File</Button>
+              <Button variant="outline">Accéder à un fichier partagé</Button>
             </Link>
             <Link to="/login">
               <Button className="bg-gradient-to-r from-primary to-primary-glow hover:opacity-90 transition-opacity">
-                Login
+                Connexion
               </Button>
             </Link>
           </div>
@@ -33,23 +33,23 @@ const Index = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="space-y-4">
             <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-              Your Files, <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Secured</span> and <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Shared</span>
+              Vos fichiers, <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Sécurisés</span> et <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Partagés</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Store, manage, and share your files securely with temporary access codes. Simple, fast, and reliable.
+              Stockez, gérez et partagez vos fichiers en toute sécurité avec des codes d&apos;accès temporaires. Simple, rapide et fiable.
             </p>
           </div>
 
           <div className="flex items-center justify-center gap-4">
             <Link to="/login">
               <Button size="lg" className="gap-2 bg-gradient-to-r from-primary to-primary-glow hover:opacity-90 transition-opacity">
-                Get Started
+                Commencer
               </Button>
             </Link>
             <Link to="/shared">
               <Button size="lg" variant="outline" className="gap-2">
                 <Share2 className="w-4 h-4" />
-                Access Shared File
+                Accéder à un fichier partagé
               </Button>
             </Link>
           </div>
@@ -59,9 +59,9 @@ const Index = () => {
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary-glow/10 flex items-center justify-center">
                 <Shield className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold">Secure Storage</h3>
+              <h3 className="text-xl font-semibold">Stockage sécurisé</h3>
               <p className="text-muted-foreground">
-                Your files are stored securely with industry-standard encryption and protection.
+                Vos fichiers sont stockés en toute sécurité avec un chiffrement et une protection conformes aux normes de l&apos;industrie.
               </p>
             </div>
 
@@ -69,9 +69,9 @@ const Index = () => {
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary-glow/10 flex items-center justify-center">
                 <Share2 className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold">Easy Sharing</h3>
+              <h3 className="text-xl font-semibold">Partage facile</h3>
               <p className="text-muted-foreground">
-                Generate unique codes to share files with anyone, no account required.
+                Générez des codes uniques pour partager des fichiers avec n&apos;importe qui, aucun compte requis.
               </p>
             </div>
 
@@ -79,9 +79,9 @@ const Index = () => {
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary-glow/10 flex items-center justify-center">
                 <Clock className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold">Time-Limited Access</h3>
+              <h3 className="text-xl font-semibold">Accès limité dans le temps</h3>
               <p className="text-muted-foreground">
-                Set expiration dates for shared files to maintain control over your content.
+                Définissez des dates d&apos;expiration pour les fichiers partagés afin de garder le contrôle sur votre contenu.
               </p>
             </div>
           </div>

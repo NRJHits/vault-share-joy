@@ -21,13 +21,13 @@ const ShareModal = ({ isOpen, onClose, fileId, files }: ShareModalProps) => {
 
   const generateShareCode = () => {
     if (!expirationDate) {
-      toast.error("Please select an expiration date");
+      toast.error("Veuillez sélectionner une date d'expiration");
       return;
     }
 
     const expDate = new Date(expirationDate);
     if (expDate <= new Date()) {
-      toast.error("Expiration date must be in the future");
+      toast.error("La date d'expiration doit être dans le futur");
       return;
     }
 
@@ -47,12 +47,12 @@ const ShareModal = ({ isOpen, onClose, fileId, files }: ShareModalProps) => {
     });
     localStorage.setItem("sharedFiles", JSON.stringify(sharedFiles));
 
-    toast.success("Share code generated!");
+    toast.success("Code de partage généré !");
   };
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(shareCode);
-    toast.success("Code copied to clipboard!");
+    toast.success("Code copié dans le presse-papiers !");
   };
 
   const handleClose = () => {
@@ -70,10 +70,10 @@ const ShareModal = ({ isOpen, onClose, fileId, files }: ShareModalProps) => {
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Share2 className="w-5 h-5" />
-            Share File
+            Partager un fichier
           </DialogTitle>
           <DialogDescription>
-            Generate a share code for: <span className="font-semibold">{file?.name}</span>
+            Générer un code de partage pour : <span className="font-semibold">{file?.name}</span>
           </DialogDescription>
         </DialogHeader>
 
@@ -81,7 +81,7 @@ const ShareModal = ({ isOpen, onClose, fileId, files }: ShareModalProps) => {
           {!isGenerated ? (
             <>
               <div className="space-y-2">
-                <Label htmlFor="expiration">Expiration Date & Time</Label>
+                <Label htmlFor="expiration">Date et heure d&apos;expiration</Label>
                 <Input
                   id="expiration"
                   type="datetime-local"
@@ -95,13 +95,13 @@ const ShareModal = ({ isOpen, onClose, fileId, files }: ShareModalProps) => {
                 onClick={generateShareCode} 
                 className="w-full bg-gradient-to-r from-primary to-primary-glow hover:opacity-90 transition-opacity"
               >
-                Generate Share Code
+                Générer un code de partage
               </Button>
             </>
           ) : (
             <>
               <div className="space-y-2">
-                <Label>Share Code</Label>
+                <Label>Code de partage</Label>
                 <div className="flex gap-2">
                   <Input
                     value={shareCode}
@@ -117,19 +117,19 @@ const ShareModal = ({ isOpen, onClose, fileId, files }: ShareModalProps) => {
                   </Button>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Expires: {new Date(expirationDate).toLocaleDateString()} at {new Date(expirationDate).toLocaleTimeString()}
+                  Expire le : {new Date(expirationDate).toLocaleDateString("fr-FR")} à {new Date(expirationDate).toLocaleTimeString("fr-FR")}
                 </p>
               </div>
 
               <div className="rounded-lg bg-muted/50 p-4 space-y-2">
-                <p className="text-sm font-medium">Share this code</p>
+                <p className="text-sm font-medium">Partagez ce code</p>
                 <p className="text-xs text-muted-foreground">
-                  Recipients can access this file at <span className="font-mono">/shared</span> using this code until it expires.
+                  Les destinataires peuvent accéder à ce fichier sur <span className="font-mono">/shared</span> en utilisant ce code jusqu&apos;à son expiration.
                 </p>
               </div>
 
               <Button onClick={handleClose} variant="outline" className="w-full">
-                Close
+                Fermer
               </Button>
             </>
           )}

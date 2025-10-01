@@ -29,8 +29,8 @@ const FileList = ({ files, onDelete, onShare }: FileListProps) => {
       <Card className="shadow-card border-border/50">
         <CardContent className="flex flex-col items-center justify-center py-16 text-center">
           <FileText className="w-16 h-16 text-muted-foreground/40 mb-4" />
-          <p className="text-lg font-medium text-muted-foreground">No files yet</p>
-          <p className="text-sm text-muted-foreground/70 mt-1">Upload your first file to get started</p>
+          <p className="text-lg font-medium text-muted-foreground">Aucun fichier pour le moment</p>
+          <p className="text-sm text-muted-foreground/70 mt-1">Téléversez votre premier fichier pour commencer</p>
         </CardContent>
       </Card>
     );
@@ -51,7 +51,7 @@ const FileList = ({ files, onDelete, onShare }: FileListProps) => {
                 <div className="flex items-center gap-3 mt-1 text-sm text-muted-foreground">
                   <span>{formatFileSize(file.size)}</span>
                   <span>•</span>
-                  <span>{new Date(file.uploadedAt).toLocaleDateString()}</span>
+                  <span>{new Date(file.uploadedAt).toLocaleDateString("fr-FR")}</span>
                 </div>
               </div>
 
@@ -63,7 +63,7 @@ const FileList = ({ files, onDelete, onShare }: FileListProps) => {
                   className="gap-2"
                 >
                   <Share2 className="w-4 h-4" />
-                  Share
+                  Partager
                 </Button>
                 <Button
                   variant="outline"
@@ -72,7 +72,7 @@ const FileList = ({ files, onDelete, onShare }: FileListProps) => {
                   className="gap-2 text-destructive hover:bg-destructive hover:text-destructive-foreground"
                 >
                   <Trash2 className="w-4 h-4" />
-                  Delete
+                  Supprimer
                 </Button>
               </div>
             </div>
