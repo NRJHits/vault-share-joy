@@ -71,9 +71,7 @@ const Login = () => {
                     required
                   />
                 </div>
-                <p className="text-xs text-muted-foreground">
-                  Mot de passe par défaut : <span className="font-mono">admin123</span>
-                </p>
+               
               </div>
 
               <Button 
