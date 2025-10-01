@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
-import { HardDrive, Lock } from "lucide-react";
+import { HardDrive, Lock, ArrowLeft } from "lucide-react";
 
 const DEFAULT_PASSWORD = "admin123";
 
@@ -32,6 +32,14 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-background via-background to-accent/5">
       <div className="w-full max-w-md">
+        <Button
+          variant="ghost"
+          onClick={() => navigate("/")}
+          className="mb-4 gap-2"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back
+        </Button>
         <div className="text-center mb-8 space-y-3">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-glow shadow-elevated mb-4">
             <HardDrive className="w-8 h-8 text-primary-foreground" />
